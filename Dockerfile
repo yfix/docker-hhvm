@@ -11,6 +11,7 @@ RUN echo "" \
   && apt-get update \
   && apt-get install -y hhvm \
   && apt-get clean -y \
+  && rm -rf /usr/{{lib,share}/locale,share/{man,doc,info,gnome/help,cracklib,il8n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
   && rm -rf /var/lib/apt/lists/*
 
 COPY container-files /

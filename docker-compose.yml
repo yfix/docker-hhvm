@@ -1,0 +1,13 @@
+php:
+#  image: yfix/hhvm
+  build: .
+  container_name: yfix_test_hhvm
+  ports:
+    - 9009:9000
+  restart: always
+  volumes:
+    - ./container-files/etc/hhvm/server.ini:/etc/hhvm/server.ini
+    - ./container-files/var/log/php:/var/log/hhvm
+    - ./container-files/etc/supervisor/conf.d/hhvm.conf:/etc/supervisor/conf.d/hhvm.conf
+    - ./container-files/var/log/supervisor:/var/log/supervisor
+    - ./container-files/var/www:/var/www
