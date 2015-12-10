@@ -15,7 +15,7 @@ RUN echo "" \
     curl \
     git \
   \
-  && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+  && curl --insecure -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
   && composer --version \
   && echo "PATH VARIABLE: "$PATH \
   \
