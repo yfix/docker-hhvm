@@ -6,8 +6,10 @@ php:
     - 9009:9000
   restart: always
   volumes:
+    - ./container-files/etc/hhvm/php.ini:/etc/hhvm/php.ini
     - ./container-files/etc/hhvm/server.ini:/etc/hhvm/server.ini
-    - ./container-files/var/log/php:/var/log/hhvm
+    - ./container-files/var/log/hhvm:/var/log/hhvm
+    - ./container-files/var/lib/hhvm/sessions:/var/lib/hhvm/sessions
     - ./container-files/etc/supervisor/conf.d/hhvm.conf:/etc/supervisor/conf.d/hhvm.conf
     - ./container-files/var/log/supervisor:/var/log/supervisor
     - ./container-files/var/www:/var/www
